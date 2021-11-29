@@ -29,27 +29,61 @@ class KingsleyHomePage extends StatelessWidget {
           title: const Text("Kings App"),
           actions: const [Icon(Icons.search), Icon(Icons.more_vert)],
         ),
-        body: Center(
-          child: ListTile(
-            leading: CircleAvatar(
-                radius: 30,
-                backgroundImage: AssetImage("assets/images/profile.jpg")),
-            title: Text("Juliana"),
-            subtitle: Row(
-              children: [
-                Icon(Icons.done_all),
-                SizedBox(width: 10),
-                Text("Send the document")
-              ],
+        body: Column(
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage("assets/images/profile.jpg")),
+              title: Text("Juliana"),
+              subtitle: Row(
+                children: [
+                  Icon(Icons.done_all),
+                  SizedBox(width: 10),
+                  Text("Send the document")
+                ],
+              ),
+              trailing: Column(
+                children: [
+                  Text('2:30'),
+                  SizedBox(height: 5),
+                  Icon(Icons.notifications_rounded),
+                ],
+              ),
             ),
-            trailing: Column(
-              children: [
-                Icon(Icons.notifications_rounded),
-                SizedBox(height: 1),
-                Text('2:30')
-              ],
-            ),
-          ),
+            //This is my ListTile
+            Card(
+            color: Colors.amber[200],
+            elevation: 3,
+              child: ListTile(
+                leading: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage("assets/images/glen.jpg"),
+                ),
+                title: const Text("Sammuel Essuman"),
+                subtitle: Row(
+                  children: const [Icon(Icons.done), 
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("Sir I'm done"),
+                  ],
+                ), 
+                trailing: Column(
+                  children: [
+                    Text("2:40"),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: 10,
+                        child: Text("4"),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
         ));
   }
 }
